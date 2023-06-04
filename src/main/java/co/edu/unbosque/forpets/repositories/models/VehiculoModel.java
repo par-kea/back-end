@@ -1,5 +1,7 @@
 package co.edu.unbosque.forpets.repositories.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -19,7 +21,6 @@ public class VehiculoModel {
 
     @Column(nullable = false)
     private String estado;
-
 
     @ManyToOne
     @JoinColumn(name="cc_cliente", nullable=false)

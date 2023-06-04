@@ -1,6 +1,8 @@
 package co.edu.unbosque.forpets.repositories.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -23,6 +25,7 @@ public class AdminModel {
 
     @OneToMany(mappedBy="cc_admin",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<ParqueaderoModel> parqueadero;
 
     public Long getCc() {

@@ -1,6 +1,8 @@
 package co.edu.unbosque.forpets.repositories.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.Set;
 import javax.persistence.*;
@@ -33,22 +35,27 @@ public class ClienteModel {
 
     @OneToMany(mappedBy="cc_cliente",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<ReservaModel> reserva;
 
     @OneToMany(mappedBy="cc_cliente",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<RegistroModel> registro;
 
     @OneToMany(mappedBy="cc_cliente",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<DatosPagoModel> datosPago;
 
     @OneToMany(mappedBy="cc_cliente",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<TelefonoModel> telefono;
 
     @OneToMany(mappedBy="cc_cliente",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<VehiculoModel> vehiculo;
 
     public Long getCc_cliente() {

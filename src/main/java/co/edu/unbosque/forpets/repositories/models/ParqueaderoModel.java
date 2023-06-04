@@ -1,6 +1,8 @@
 package co.edu.unbosque.forpets.repositories.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -35,10 +37,12 @@ public class ParqueaderoModel {
 
     @ManyToOne
     @JoinColumn(name="cc_admin", nullable=false)
+    @JsonIgnore
     private AdminModel cc_admin;
 
     @ManyToOne
     @JoinColumn(name="cc_funcionario", nullable=false)
+    @JsonIgnore
     private FuncionarioModel cc_funcionario;
 
 

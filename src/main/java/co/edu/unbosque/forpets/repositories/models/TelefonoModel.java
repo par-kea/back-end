@@ -1,5 +1,7 @@
 package co.edu.unbosque.forpets.repositories.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -19,6 +21,7 @@ public class TelefonoModel {
 
     @ManyToOne
     @JoinColumn(name="cc_cliente", nullable=false)
+
     private ClienteModel cc_cliente;
 
     public Long getId_telefono() {

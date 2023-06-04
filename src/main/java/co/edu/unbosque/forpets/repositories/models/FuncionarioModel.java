@@ -1,6 +1,8 @@
 package co.edu.unbosque.forpets.repositories.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -24,10 +26,12 @@ public class FuncionarioModel {
 
     @OneToMany(mappedBy="cc_funcionario",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<ParqueaderoModel> parqueadero;
 
     @OneToMany(mappedBy="cc_funcionario",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<RegistroModel> registro;
 
     public Long getCc_funcionario() {
